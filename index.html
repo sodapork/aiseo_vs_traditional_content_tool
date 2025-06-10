@@ -15,39 +15,43 @@
 
     <main>
         <section class="palette">
-            <h2>Strategy Elements</h2>
-            <div class="palette-container">
-                <div class="strategy-block" draggable="true" data-type="ai">
-                    <h3>AI SEO</h3>
-                    <ul>
-                        <li>AI Content Generation</li>
-                        <li>Automated Keyword Research</li>
-                        <li>AI-Powered Content Optimization</li>
-                        <li>Machine Learning Analytics</li>
-                    </ul>
+            <h2>Pick Your Strategy Elements</h2>
+            <form id="picklist-form">
+                <div class="palette-container" id="picklist-container">
+                    <!-- Picklist blocks: only show Actual Strategy as main title -->
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="Declarative Sentences">Declarative Sentences</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Internal Linking Strategy">Internal Linking Strategy</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="Semantic Topic Clustering">Semantic Topic Clustering</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Page Speed Optimization">Page Speed Optimization</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="Answering FAQs Directly">Answering FAQs Directly</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Meta Description Optimization">Meta Description Optimization</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="Concise Definition Blocks">Concise Definition Blocks</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Long-Form Evergreen Articles">Long-Form Evergreen Articles</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="Factual Citations from .gov/.edu">Factual Citations from .gov/.edu</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Mobile-First Design">Mobile-First Design</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="High-Frequency Entity Mentions">High-Frequency Entity Mentions</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Schema Markup Implementation">Schema Markup Implementation</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="Structured Listicles">Structured Listicles</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Image Alt Text + Compression">Image Alt Text + Compression</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="Semantic Reliability + Formatting">Semantic Reliability + Formatting</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Local SEO Content">Local SEO Content</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="Factually Clear Paragraphs">Factually Clear Paragraphs</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Authoritative External Linking">Authoritative External Linking</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="ai" data-strategy="JSON-LD for Entities & Facts">JSON-LD for Entities & Facts</div>
+                    <div class="strategy-block picklist-block" tabindex="0" data-type="traditional" data-strategy="Keyword-Rich Headlines">Keyword-Rich Headlines</div>
                 </div>
-                <div class="strategy-block" draggable="true" data-type="traditional">
-                    <h3>Traditional SEO</h3>
-                    <ul>
-                        <li>Manual Keyword Research</li>
-                        <li>Human Content Creation</li>
-                        <li>Manual Link Building</li>
-                        <li>Traditional Analytics</li>
-                    </ul>
+                <button id="submit-btn" type="submit" disabled>Submit</button>
+            </form>
+        </section>
+        <section id="results-section" style="display:none;">
+            <h2>Your Strategy Results</h2>
+            <div id="chosen-strategy-list"></div>
+            <div class="chart-section">
+                <h2>Strategy Distribution</h2>
+                <div class="chart-container">
+                    <canvas id="strategyChart"></canvas>
                 </div>
             </div>
-        </section>
-
-        <section class="drop-zone">
-            <h2>Your Strategy</h2>
-            <div id="strategy-container" class="strategy-container">
-                <p class="drop-message">Drop strategy elements here</p>
-            </div>
-        </section>
-
-        <section class="chart-section">
-            <h2>Strategy Distribution</h2>
-            <canvas id="strategyChart"></canvas>
         </section>
     </main>
 

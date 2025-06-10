@@ -44,23 +44,40 @@ main {
 
 .palette-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
     margin-top: 1rem;
 }
 
 .strategy-block {
     background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    cursor: move;
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 1.2rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    cursor: grab;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.18s, box-shadow 0.18s;
+    border: 2px solid transparent;
+}
+
+.strategy-block[data-type="ai"],
+.strategy-block[data-type="traditional"] {
+    border-color: #b3d8fd !important;
+}
+
+.strategy-block:active {
+    cursor: grabbing;
+    transform: scale(0.98);
 }
 
 .strategy-block:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.10);
+    background: #f0f6ff;
 }
 
 .strategy-block h3 {
@@ -98,9 +115,17 @@ main {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.chart-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 canvas {
     width: 100% !important;
-    height: 300px !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    display: block;
 }
 
 section {
@@ -115,6 +140,31 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.aspect-title {
+    font-weight: 700;
+    font-size: 1.08em;
+    margin-bottom: 0.25em;
+    color: inherit;
+}
+
+.aspect-desc {
+    font-size: 0.98em;
+    color: #34495e;
+    line-height: 1.4;
+}
+
+.dropped-block {
+    opacity: 0.95;
+    background: #f8fafc;
+}
+
+.block-label {
+    font-weight: 600;
+    font-size: 1.08em;
+    color: inherit;
+    letter-spacing: 0.01em;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -123,4 +173,88 @@ h2 {
     .palette-container {
         grid-template-columns: 1fr;
     }
+}
+
+.picklist-block {
+    border: 2px solid #b3d8fd;
+    background: #fff;
+    color: var(--primary-color);
+    font-size: 1.18em;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.picklist-block.selected {
+    border: 3px solid var(--secondary-color);
+    background: #eaf6ff;
+    box-shadow: 0 4px 16px rgba(52, 152, 219, 0.10);
+}
+#submit-btn {
+    margin: 1.5rem auto 0 auto;
+    display: block;
+    padding: 0.75rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+#submit-btn:enabled {
+    opacity: 1;
+}
+#submit-btn:disabled {
+    cursor: not-allowed;
+}
+#chosen-strategy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.chosen-strategy-block {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 1.1rem 1rem;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    border-left: 5px solid var(--secondary-color);
+    font-size: 1.05em;
+    margin-bottom: 0.5rem;
+}
+.chosen-strategy-block.ai {
+    border-left-color: var(--secondary-color);
+}
+.chosen-strategy-block.traditional {
+    border-left-color: var(--accent-color);
+}
+.chosen-strategy-block .block-label {
+    font-weight: 800;
+    color: var(--primary-color);
+    font-size: 1.25em;
+    margin-bottom: 0.2em;
+    line-height: 1.2;
+}
+.chosen-strategy-block .block-strategy {
+    font-size: 1em;
+    color: #4a5a6a;
+    margin-top: 0.2em;
+    font-style: italic;
+    background: none;
+    padding: 0;
+    display: block;
+}
+.chosen-strategy-block .block-type {
+    font-size: 0.93em;
+    margin-top: 0.2em;
+    color: #888;
+    font-style: italic;
 } 
