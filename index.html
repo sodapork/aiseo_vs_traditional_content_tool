@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI vs Traditional SEO Strategy Builder</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AI vs Traditional SEO Strategy Builder</h1>
+        <p>Drag and drop elements to build your content strategy</p>
+    </header>
+
+    <main>
+        <section class="palette">
+            <h2>Strategy Elements</h2>
+            <div class="palette-container">
+                <div class="strategy-block" draggable="true" data-type="ai">
+                    <h3>AI SEO</h3>
+                    <ul>
+                        <li>AI Content Generation</li>
+                        <li>Automated Keyword Research</li>
+                        <li>AI-Powered Content Optimization</li>
+                        <li>Machine Learning Analytics</li>
+                    </ul>
+                </div>
+                <div class="strategy-block" draggable="true" data-type="traditional">
+                    <h3>Traditional SEO</h3>
+                    <ul>
+                        <li>Manual Keyword Research</li>
+                        <li>Human Content Creation</li>
+                        <li>Manual Link Building</li>
+                        <li>Traditional Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="drop-zone">
+            <h2>Your Strategy</h2>
+            <div id="strategy-container" class="strategy-container">
+                <p class="drop-message">Drop strategy elements here</p>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>Strategy Distribution</h2>
+            <canvas id="strategyChart"></canvas>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
